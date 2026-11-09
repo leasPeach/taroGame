@@ -25,6 +25,7 @@
 	"executeSQLs":[
 		"CREATE DATABASE IF NOT EXISTS golang_demo;",
 		"USE golang_demo;",
-		"CREATE TABLE IF NOT EXISTS `Counters` (`id` int(11) NOT NULL AUTO_INCREMENT, `count` int(11) NOT NULL DEFAULT 1, `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE = InnoDB DEFAULT CHARSET = utf8;"
-	]                                            
+		"CREATE TABLE IF NOT EXISTS `Counters` (`id` int(11) NOT NULL AUTO_INCREMENT, `count` int(11) NOT NULL DEFAULT 1, `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE = InnoDB DEFAULT CHARSET = utf8;",
+		"CREATE TABLE IF NOT EXISTS `Users` (`id` bigint NOT NULL AUTO_INCREMENT, `openId` varchar(64) NOT NULL, `unionId` varchar(64) DEFAULT NULL, `nickName` varchar(64) NOT NULL DEFAULT '', `avatarUrl` varchar(512) NOT NULL DEFAULT '', `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`id`), UNIQUE KEY `uk_openId` (`openId`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;"
+	]
 }
